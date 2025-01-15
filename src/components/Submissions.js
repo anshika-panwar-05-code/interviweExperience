@@ -52,7 +52,7 @@ const Submissions = () => {
       company: submission.company,
       country: submission.country,
       name: submission.name,
-      questions: submission.questions.join(', '),  // Convert questions array to a comma-separated string
+      questions: submission.questions.join(', '),  
     });
   };
 
@@ -64,7 +64,7 @@ const Submissions = () => {
         `http://localhost:5000/submissions/${editId}`,
         {
           ...formData,
-          questions: formData.questions.split(',').map((q) => q.trim()), // Convert string back to array
+          questions: formData.questions.split(',').map((q) => q.trim()), 
         },
         {
           headers: {
@@ -76,7 +76,7 @@ const Submissions = () => {
       setSubmissions(submissions.map((submission) =>
         submission._id === editId ? { ...submission, ...formData, questions: formData.questions.split(',').map(q => q.trim()) } : submission
       ));
-      setEditId(null); // Reset edit mode
+      setEditId(null); 
     } catch (err) {
       console.error('Error saving submission:', err);
     }

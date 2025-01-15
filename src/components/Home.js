@@ -1,19 +1,3 @@
-// // src/components/Home.js
-// import React from 'react';
-
-// const Home = () => {
-//   return (
-//     <div>
-//       <h2>Welcome to the Interview Experience Platform!</h2>
-//       <p>This platform allows you to share and view interview experiences.</p>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-
-// src/components/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,7 +30,7 @@ const Home = () => {
   );
 };
 
-// Inline styles for simplicity
+// Inline styles 
 const styles = {
   container: {
     textAlign: 'center',

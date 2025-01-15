@@ -1,4 +1,4 @@
-// src/components/Register.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/register', { username, password });
-      navigate('/login');  // Redirect to login after successful registration
+      navigate('/login');  
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
     }
