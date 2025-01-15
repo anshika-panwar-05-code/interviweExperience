@@ -14,57 +14,156 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Interview Experience Submission Platform
 
-### `npm run build`
+Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Interview Experience Submission Platform is a web application that allows users to share and view interview experiences. It includes user authentication, CRUD operations for managing submissions, and a responsive interface for seamless interaction.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+User Registration and Login: Secure user authentication with password hashing and JWTs.
 
-### `npm run eject`
+Submit Interview Experiences: Users can submit their interview experiences including company, country, and questions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+View Submissions: All users can view all submissions. Individual users can view their own submissions in detail.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Authentication & Authorization: Ensures that only authenticated users can create, update, or view their own submissions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Backend with Node.js & Express: Provides RESTful APIs for data handling.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+MongoDB Integration: Stores user and submission data efficiently.
 
-## Learn More
+Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Node.js
 
-### Code Splitting
+Express.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+MongoDB
 
-### Analyzing the Bundle Size
+Mongoose
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+JWT Authentication
 
-### Making a Progressive Web App
+bcrypt for Password Hashing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Frontend
 
-### Advanced Configuration
+React.js (Frontend is to be integrated as needed)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Project Setup
 
-### Deployment
+Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Ensure you have the following installed:
 
-### `npm run build` fails to minify
+Node.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MongoDB (running locally or via a cloud provider like MongoDB Atlas)
+
+Installation
+
+Clone the repository:
+
+git clone <repository-url>
+cd interview-platform
+
+Install dependencies:
+
+npm install
+
+Replace your_jwt_secret with a secure key.
+
+Start the server:
+
+npm start
+
+The backend server will run on http://localhost:5000.
+
+API Endpoints
+
+User Authentication
+
+POST /register: Register a new user.
+
+Request Body: { username, password }
+
+POST /login: Authenticate user and receive a JWT.
+
+Request Body: { username, password }
+
+Submissions
+
+POST /submissions: Create a new submission (Authenticated).
+
+Request Body: { name, country, company, questions }
+
+GET /submissions: Retrieve all submissions.
+
+GET /submissions/:id: Retrieve a single submission by ID (Authenticated).
+
+Testing
+
+To Test Backend:
+
+Use a tool like Postman or cURL to interact with the APIs.
+
+Create test users and test submission functionalities.
+
+Verify authentication by accessing protected routes with and without valid tokens.
+
+Run Linting and Formatting:
+
+Install ESLint and Prettier (Optional):
+
+npm install --save-dev eslint prettier
+
+Run linting:
+
+npx eslint .
+
+Folder Structure
+
+interview-platform/
+|
+│   
+│   ├── models/
+│   
+│   └── app.js
+├── 
+├── package.json
+└── README.md
+
+Future Enhancements
+
+Search and Filter: Add functionality to search for submissions by company, country, or user.
+
+Pagination: Enable pagination for the submissions list.
+
+Frontend Integration: Build and integrate a responsive React.js frontend.
+
+Role-Based Access Control (RBAC): Implement roles (e.g., Admin, User) for better permission handling.
+
+License
+
+This project is licensed under the MIT License.
+
+Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request for review.
+
+Contact
+
+For inquiries or support, please reach out to:
+
+Name: Anshika Panwar
+
+
+
+
+
+
